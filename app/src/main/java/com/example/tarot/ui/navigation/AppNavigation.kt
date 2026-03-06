@@ -21,7 +21,7 @@ fun AppNavigation() {
             CardScreen(navHostController = navHostController)
         }
         composable("showCardsScreen") {
-            ShowCardsScreen()
+            ShowCardsScreen(navHostController = navHostController)
         }
     }
 

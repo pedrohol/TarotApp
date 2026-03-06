@@ -112,17 +112,18 @@ fun MainScreen(navHostController: NavHostController = rememberNavController()) {
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(10.dp)
-                    .clickable(
-                        interactionSource = remember { MutableInteractionSource() },
-                        indication = null) {
-                        navHostController.navigate("showCardsScreen")
-                    }
             ){
 
                 Image(
                     painterResource(id = R.drawable.cards_icon),
                     contentDescription = "Cards icon",
-                    modifier = Modifier.size(45.dp)
+                    modifier = Modifier
+                        .size(45.dp)
+                        .clickable(
+                            interactionSource = remember { MutableInteractionSource() },
+                            indication = null) {
+                            navHostController.navigate("showCardsScreen")
+                        }
                 )
             }
 
