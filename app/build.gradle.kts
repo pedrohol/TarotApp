@@ -63,6 +63,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.runtime.compose)
 
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
 
