@@ -23,13 +23,6 @@ fun MainScreen(modifier:Modifier = Modifier) {
     val cardList = uiState.value.cardsList
 
     Column(modifier = modifier.fillMaxSize()) {
-
-        cardList.forEach {
-            Text(text = it.name)
-        }
-
-        Button(onClick = { viewModel.getCards()} ) {
-        }
-
+        CardScreen()
     }
 }
