@@ -11,14 +11,19 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
+import com.example.tarot.R
 
 @Preview
 @Composable
@@ -42,35 +47,56 @@ fun LoadingCards() {
     Row(verticalAlignment = Alignment.Bottom,
         modifier = Modifier.padding(10.dp)){
 
-        Card(modifier = Modifier
-            .height(80.dp)
+        Card(
+            shape = RoundedCornerShape(2.dp),
+            colors = CardDefaults.cardColors(Color.White),
+            modifier = Modifier
+            .height(88.dp)
             .width(50.dp)
             .graphicsLayer{
-                rotationZ = -5f
+                rotationZ = -8f
                 translationY = movementCard
             }
-        ) {}
+        ) {
+            AsyncImage(
+                model = R.drawable.card_back,
+                contentDescription = "Card Back Loading"
+            )
+        }
 
-        Spacer(modifier = Modifier.width(8.dp))
 
-        Card(modifier = Modifier
-            .height(80.dp)
+        Card(
+            shape = RoundedCornerShape(2.dp),
+            colors = CardDefaults.cardColors(Color.White),
+            modifier = Modifier
+            .height(88.dp)
             .width(50.dp)
             .graphicsLayer{
                 translationY = movementCard
             }
-        ) {}
+        ) {
+            AsyncImage(
+                model = R.drawable.card_back,
+                contentDescription = "Card Back Loading"
+            )
+        }
 
-        Spacer(modifier = Modifier.width(8.dp))
-
-        Card(modifier = Modifier
-            .height(80.dp)
+        Card(
+            shape = RoundedCornerShape(2.dp),
+            colors = CardDefaults.cardColors(Color.White),
+            modifier = Modifier
+            .height(88.dp)
             .width(50.dp)
             .graphicsLayer{
-                rotationZ = 5f
+                rotationZ = 8f
                 translationY = movementCard
             }
-        ) {}
+        ) {
+            AsyncImage(
+                model = R.drawable.card_back,
+                contentDescription = "Card Back Loading"
+            )
+        }
 
     }
 

@@ -20,11 +20,15 @@ class CardViewModel(val repository: CardRepository): ViewModel() {
     private val _uiState = MutableStateFlow(CardUiState())
     val uiState = _uiState.asStateFlow()
 
+    init {
+        getCards()
+    }
+
     fun getCards() {
         newList.clear()
         _uiState.update { it.copy(isLoading = true) }
         viewModelScope.launch {
-            for (i in 1..5) {
+            for (i in 1..10) {
                 val card = cards.random()
                 newList.add(card)
                 cards.remove(card)

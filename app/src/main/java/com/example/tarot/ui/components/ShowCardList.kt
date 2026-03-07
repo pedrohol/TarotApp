@@ -37,6 +37,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.LineBreak
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -47,7 +49,7 @@ import com.example.tarot.model.Card
 
 @Preview
 @Composable
-fun ShowCardList(card: Card = Card("","",0)) {
+fun ShowCardList(card: Card = Card("","",R.drawable.card_dez_de_paus)) {
 
     var rotated by remember { mutableStateOf(true) }
     var showCard by remember { mutableStateOf(false)}
@@ -58,16 +60,6 @@ fun ShowCardList(card: Card = Card("","",0)) {
         animationSpec = tween(durationMillis = 600, easing = FastOutSlowInEasing),
         label = "cardFlip")
 
-    val arrowLoop by infiniteTransition.animateFloat(
-        initialValue = 0f,
-        targetValue = -14f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(durationMillis = 1000, easing = FastOutSlowInEasing),
-            repeatMode = RepeatMode.Reverse
-        ),
-        label = "arrowAnimation"
-    )
-
     val animatedAlpha by animateFloatAsState(
         targetValue = if (showCard) 1.0f else 0f,
         label = "alpha"
@@ -75,14 +67,15 @@ fun ShowCardList(card: Card = Card("","",0)) {
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxSize().background(Color(0xFF52969F))
+        modifier = Modifier.fillMaxSize()
     ) {
 
         Card(
+            colors = CardDefaults.cardColors(Color.White),
             elevation = CardDefaults.cardElevation(6.dp),
             modifier = Modifier
-                .height(450.dp)
-                .width(250.dp)
+                .height(460.dp)
+                .width(264.dp)
 
                 .clickable{
                     rotated = !rotated
@@ -92,59 +85,54 @@ fun ShowCardList(card: Card = Card("","",0)) {
                     cameraDistance = 12f * density
                 }) {
 
-            if (rotation == 180f) {
+            if (rotation > 90f) {
                 AsyncImage(
                     model = R.drawable.card_back,
                     contentDescription = "Card Back",
                     contentScale = ContentScale.Crop
                 )
 
-            } else {
-                AsyncImage(
-                    model = card.image,
-                    contentDescription = "Card Front",
-                    contentScale = ContentScale.Crop
-                )
+            } else if (rotation <= 90f) {
+                Box(contentAlignment = Alignment.Center,
+                    modifier = Modifier.fillMaxSize())
+                {
+                    AsyncImage(
+                        model = card.image,
+                        contentDescription = "Card Front",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .size(height = 450.dp, width = 256.dp)
+
+                    )
+                }
             }
         }
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Column(modifier = Modifier.fillMaxHeight()) {
-            Box(
-                contentAlignment = Alignment.TopCenter,
-                modifier = Modifier
-                    .animateContentSize()
-                    .width(350.dp)
-                    .height(if (showCard) 220.dp else 0.dp)
-                    .graphicsLayer{ alpha = animatedAlpha }
-            ) {
+        Column(modifier = Modifier
+            .animateContentSize()
+            .height( if(showCard) 230.dp else 0.dp )
+            .graphicsLayer{
+                alpha = animatedAlpha
+            }) {
 
-                Card(
-                    modifier = Modifier.fillMaxSize(),
-                    colors = CardDefaults.cardColors(Color(0x33000000)),
-                    shape = RoundedCornerShape(4.dp)) {}
+            Text(
+                text = card.name,
+                fontSize = 18.sp,
+                color = Color.White,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth().padding(top = 8.dp, start = 8.dp, end = 8.dp))
 
-                Text(
-                    text = "CARD NAME",
-                    fontSize = 14.sp,
-                    color = Color.White,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth().padding(8.dp))
-            }
+            Text(
+                text = card.description,
+                fontSize = 15.sp,
+                color = Color.White,
+                textAlign = TextAlign.Center,
+                style = TextStyle(lineBreak = LineBreak.Paragraph),
+                modifier = Modifier.fillMaxWidth().padding(8.dp))
 
-            Spacer(modifier = Modifier.height(20.dp))
-
-//            Image(
-//                painter = painterResource(id = R.drawable.arrow_down_icon),
-//                contentDescription = "Close icon",
-//                alignment = Alignment.Center,
-//                modifier = Modifier
-//                    .fillMaxWidth()
-//                    .size(60.dp)
-//                    .padding(10.dp)
-//                    .graphicsLayer{ translationY = arrowLoop },
-//                )
+            Spacer(modifier = Modifier.height(10.dp))
         }
     }
 }

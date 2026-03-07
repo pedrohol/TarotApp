@@ -48,9 +48,6 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun MainScreen(navHostController: NavHostController = rememberNavController()) {
 
-    val viewModel: CardViewModel = koinViewModel()
-    val uiState = viewModel.uiState.collectAsStateWithLifecycle()
-    val cardList = uiState.value.cardsList
     val scope = rememberCoroutineScope()
 
     val infiniteTransition = rememberInfiniteTransition(label = "tapTransition")
