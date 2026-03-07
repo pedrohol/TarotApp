@@ -112,7 +112,7 @@ fun ShowCardList(card: Card = Card("","",R.drawable.card_dez_de_paus)) {
 
         Column(modifier = Modifier
             .animateContentSize()
-            .height( if(showCard) 230.dp else 0.dp )
+            .height( if(showCard) 240.dp else 0.dp )
             .graphicsLayer{
                 alpha = animatedAlpha
             }) {
