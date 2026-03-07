@@ -64,7 +64,7 @@ fun ShowCardsScreen(navHostController: NavHostController = rememberNavController
         Column(modifier = Modifier
             .fillMaxSize()
             .padding(innerPadding)
-            .background(Color(0xFF524480))) {
+            .background(Color(0xFF52969F))) {
 
             Image(
                 painter = painterResource(id = R.drawable.back_icon),

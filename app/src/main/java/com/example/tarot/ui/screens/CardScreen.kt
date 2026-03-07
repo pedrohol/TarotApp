@@ -35,7 +35,7 @@ import com.example.tarot.ui.components.ShowCardList
 @Composable
 fun CardScreen(
     navHostController: NavHostController = rememberNavController(),
-    cardList: List<Card> = listOf(Card("","",""), Card("","",""))
+    cardList: List<Card> = listOf(Card("","",0), Card("","", 0))
 ) {
 
     Scaffold() {innerPadding ->
@@ -46,7 +46,7 @@ fun CardScreen(
                 .padding(innerPadding)
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())
-                .background(Color(0xFF524480))) {
+                .background(Color(0xFF52969F))) {
 
             Image(
                 painter = painterResource(id = R.drawable.close_icon),
@@ -66,7 +66,7 @@ fun CardScreen(
 
             cardList.forEach {
                 Box(modifier = Modifier.fillMaxHeight()) {
-                    ShowCardList()
+                    ShowCardList(cardFront = it)
                 }
             }
         }

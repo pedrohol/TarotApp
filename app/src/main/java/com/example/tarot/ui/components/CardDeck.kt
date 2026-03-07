@@ -12,94 +12,103 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
+import com.example.tarot.R
 
 @Preview
 @Composable
 fun CardDeck() {
     Box(contentAlignment = Alignment.TopCenter) {
         Card(
-            modifier = Modifier.height(130.dp).width(76.dp),
+            modifier = Modifier.height(154.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp)
         ) {}
 
         Card(
-            modifier = Modifier.height(129.dp).width(76.dp),
+            modifier = Modifier.height(153.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
             colors = CardDefaults.cardColors(Color(0x33000000)),
             ) {}
 
         Card(
-            modifier = Modifier.height(128.dp).width(76.dp),
+            modifier = Modifier.height(152.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp)
         ) {}
 
         Card(
-            modifier = Modifier.height(127.dp).width(76.dp),
+            modifier = Modifier.height(151.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
             colors = CardDefaults.cardColors(Color(0x33000000)),
         ) {}
 
         Card(
-            modifier = Modifier.height(126.dp).width(76.dp),
+            modifier = Modifier.height(150.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp)
         ) {}
 
         Card(
-            modifier = Modifier.height(125.dp).width(76.dp),
+            modifier = Modifier.height(149.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
             colors = CardDefaults.cardColors(Color(0x33000000)),
         ) {}
 
         Card(
-            modifier = Modifier.height(124.dp).width(76.dp),
+            modifier = Modifier.height(148.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
         ) {}
 
         Card(
-            modifier = Modifier.height(123.dp).width(76.dp),
+            modifier = Modifier.height(147.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
             colors = CardDefaults.cardColors(Color(0x33000000)),
         ) {}
 
         Card(
-            modifier = Modifier.height(122.dp).width(76.dp),
+            modifier = Modifier.height(146.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
         ) {}
 
         Card(
-            modifier = Modifier.height(121.dp).width(76.dp),
+            modifier = Modifier.height(145.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
             colors = CardDefaults.cardColors(Color(0x33000000)),
         ) {}
 
         Card(
-            modifier = Modifier.height(120.dp).width(76.dp),
+            modifier = Modifier.height(144.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
         ) {}
 
         Card(
-            modifier = Modifier.height(119.dp).width(76.dp),
+            modifier = Modifier.height(143.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
             colors = CardDefaults.cardColors(Color(0x33000000)),
         ) {}
 
         Card(
-            modifier = Modifier.height(118.dp).width(76.dp),
+            modifier = Modifier.height(142.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
         ) {}
 
         Card(
-            modifier = Modifier.height(117.dp).width(76.dp),
+            modifier = Modifier.height(141.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
             colors = CardDefaults.cardColors(Color(0x33000000)),
         ) {}
 
         Card(
-            modifier = Modifier.height(116.dp).width(76.dp),
+            modifier = Modifier.height(140.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
-        ) {}
+        ) {
+            AsyncImage(
+                model = R.drawable.card_back,
+                contentDescription = "Card Back",
+                contentScale = ContentScale.Crop
+            )
+        }
 
     }
 }
