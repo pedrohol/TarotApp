@@ -9,23 +9,23 @@ Aplicativo Android de tiragem de Tarot.
 
 ## Screenshots
 <img
-  width = "180"
+  width = "150"
   src="https://i.imgur.com/ca4xVuX.jpeg"
   />
 <img
-  width = "180"
+  width = "150"
   src="https://i.imgur.com/ySMkpUv.jpeg"
   />
 <img
-  width = "180"
+  width = "150"
   src="https://i.imgur.com/1mps2Du.jpeg"
   />
 <img
-  width = "180"
+  width = "150"
   src="https://i.imgur.com/2V0JL9R.jpeg"
   />
 <img
-  width = "180"
+  width = "150"
   src="https://i.imgur.com/SmHhhud.jpeg"
   />
 
