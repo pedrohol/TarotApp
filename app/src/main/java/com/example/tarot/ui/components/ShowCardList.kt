@@ -46,10 +46,11 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.example.tarot.R
 import com.example.tarot.model.Card
+import com.example.tarot.ui.theme.tarotFontFamily
 
 @Preview
 @Composable
-fun ShowCardList(card: Card = Card("","",R.drawable.card_dez_de_paus)) {
+fun ShowCardList(card: Card = Card("3 de Espadas","O 3 de Espadas geralmente significa algo doloroso em sua vida. Seu coração pode estar partido por conta de alguma situação ou de alguém. É necessário encontrar o equilíbrio em meio à tristeza para poder voltar a uma frequência positiva. Não seja vítima das injustiças, a vida às vezes bate forte, mas sempre temos o poder de nos levantar. Sugere que você deve ser honesto(a) com você mesmo(a) e parar de se enganar. Use o poder do seu intelecto e da razão, é a hora de dar a volta por cima e recomeçar.",R.drawable.card_dez_de_paus)) {
 
     var rotated by remember { mutableStateOf(true) }
     var showCard by remember { mutableStateOf(false)}
@@ -112,23 +113,25 @@ fun ShowCardList(card: Card = Card("","",R.drawable.card_dez_de_paus)) {
 
         Column(modifier = Modifier
             .animateContentSize()
-            .height( if(showCard) 240.dp else 0.dp )
+            .height( if(showCard) 260.dp else 0.dp )
             .graphicsLayer{
                 alpha = animatedAlpha
             }) {
 
             Text(
                 text = card.name,
-                fontSize = 18.sp,
+                fontSize = 22.sp,
                 color = Color.White,
                 textAlign = TextAlign.Center,
+                fontFamily = tarotFontFamily,
                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp, start = 8.dp, end = 8.dp))
 
             Text(
                 text = card.description,
-                fontSize = 15.sp,
+                fontSize = 19.sp,
                 color = Color.White,
                 textAlign = TextAlign.Center,
+                fontFamily = tarotFontFamily,
                 style = TextStyle(lineBreak = LineBreak.Paragraph),
                 modifier = Modifier.fillMaxWidth().padding(8.dp))
 

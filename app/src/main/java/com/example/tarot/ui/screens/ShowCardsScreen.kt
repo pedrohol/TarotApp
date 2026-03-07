@@ -55,6 +55,7 @@ import coil3.compose.AsyncImage
 import com.example.tarot.R
 import com.example.tarot.model.Card
 import com.example.tarot.ui.components.CardItem
+import com.example.tarot.ui.theme.tarotFontFamily
 import com.example.tarot.viewModel.CardViewModel
 import org.koin.androidx.compose.koinViewModel
 
@@ -63,11 +64,9 @@ import org.koin.androidx.compose.koinViewModel
 fun ShowCardsScreen(navHostController: NavHostController = rememberNavController()) {
 
     var showCard by remember { mutableStateOf(false) }
-    var cardDescription by remember { mutableStateOf("") }
 
     val viewModel: CardViewModel = koinViewModel()
-    val uiState = viewModel.uiState.collectAsStateWithLifecycle()
-    val cardList = uiState.value.cardsList.toList()
+    val cardList = viewModel.cards
     var cardSelected by remember { mutableStateOf(Card()) }
 
     val animatedAlpha by animateFloatAsState(
@@ -182,16 +181,18 @@ fun ShowCardsScreen(navHostController: NavHostController = rememberNavController
                         {
                             Text(
                                 text = cardSelected.name,
-                                fontSize = 18.sp,
+                                fontSize = 22.sp,
                                 color = Color.White,
                                 textAlign = TextAlign.Center,
+                                fontFamily = tarotFontFamily,
                                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp, start = 8.dp, end = 8.dp))
 
                             Text(
                                 text = cardSelected.description,
-                                fontSize = 15.sp,
+                                fontSize = 19.sp,
                                 color = Color.White,
                                 textAlign = TextAlign.Center,
+                                fontFamily = tarotFontFamily,
                                 style = TextStyle(lineBreak = LineBreak.Paragraph),
                                 modifier = Modifier.fillMaxWidth().padding(8.dp))
 

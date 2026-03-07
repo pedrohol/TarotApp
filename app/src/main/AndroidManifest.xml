@@ -16,7 +16,7 @@
             android:name=".main.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Tarot">
+            android:theme="@style/Theme.App.Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

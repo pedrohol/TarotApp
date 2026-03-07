@@ -28,7 +28,7 @@ class CardViewModel(val repository: CardRepository): ViewModel() {
         newList.clear()
         _uiState.update { it.copy(isLoading = true) }
         viewModelScope.launch {
-            for (i in 1..7) {
+            for (i in 1..5) {
                 val card = cards.random()
                 newList.add(card)
                 cards.remove(card)
