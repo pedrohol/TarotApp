@@ -276,7 +276,7 @@ class TarotCards: CardRepository {
             Card(
                 name = "Cavaleiro de Ouros",
                 description = "O Cavaleiro de Ouros significa basicamente perseverança, esforço e comprometimento para realizar objetivos, mas, ao mesmo tempo, certa insegurança emocional. Indica que o momento é propício para sentir energia e determinação necessárias para completar qualquer tarefa. Também sugere estabilidade e segurança, esforço e responsabilidade.",
-                image = R.drawable.card_valete_de_ouros
+                image = R.drawable.card_cavaleiros_de_ouros
             ),
             Card(
                 name = "Rainha de Ouros",
