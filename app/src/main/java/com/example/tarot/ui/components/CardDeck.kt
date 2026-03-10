@@ -26,81 +26,53 @@ fun CardDeck() {
     Box(contentAlignment = Alignment.TopCenter) {
         Card(
             modifier = Modifier.height(154.dp).width(78.dp),
-            shape = RoundedCornerShape(4.dp)
-        ) {}
-
+            shape = RoundedCornerShape(4.dp)) {}
         Card(
             modifier = Modifier.height(153.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
-            colors = CardDefaults.cardColors(Color(0x33000000)),
-            ) {}
-
+            colors = CardDefaults.cardColors(Color(0x33000000)),) {}
         Card(
             modifier = Modifier.height(152.dp).width(78.dp),
-            shape = RoundedCornerShape(4.dp)
-        ) {}
-
+            shape = RoundedCornerShape(4.dp)) {}
         Card(
             modifier = Modifier.height(151.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
-            colors = CardDefaults.cardColors(Color(0x33000000)),
-        ) {}
-
+            colors = CardDefaults.cardColors(Color(0x33000000)),) {}
         Card(
             modifier = Modifier.height(150.dp).width(78.dp),
-            shape = RoundedCornerShape(4.dp)
-        ) {}
-
+            shape = RoundedCornerShape(4.dp)) {}
         Card(
             modifier = Modifier.height(149.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
-            colors = CardDefaults.cardColors(Color(0x33000000)),
-        ) {}
-
+            colors = CardDefaults.cardColors(Color(0x33000000)),) {}
         Card(
             modifier = Modifier.height(148.dp).width(78.dp),
-            shape = RoundedCornerShape(4.dp),
-        ) {}
-
+            shape = RoundedCornerShape(4.dp),) {}
         Card(
             modifier = Modifier.height(147.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
-            colors = CardDefaults.cardColors(Color(0x33000000)),
-        ) {}
-
+            colors = CardDefaults.cardColors(Color(0x33000000)),) {}
         Card(
             modifier = Modifier.height(146.dp).width(78.dp),
-            shape = RoundedCornerShape(4.dp),
-        ) {}
-
+            shape = RoundedCornerShape(4.dp),) {}
         Card(
             modifier = Modifier.height(145.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
-            colors = CardDefaults.cardColors(Color(0x33000000)),
-        ) {}
-
+            colors = CardDefaults.cardColors(Color(0x33000000)),) {}
         Card(
             modifier = Modifier.height(144.dp).width(78.dp),
-            shape = RoundedCornerShape(4.dp),
-        ) {}
-
+            shape = RoundedCornerShape(4.dp),) {}
         Card(
             modifier = Modifier.height(143.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
-            colors = CardDefaults.cardColors(Color(0x33000000)),
-        ) {}
-
+            colors = CardDefaults.cardColors(Color(0x33000000)),) {}
         Card(
             modifier = Modifier.height(142.dp).width(78.dp),
-            shape = RoundedCornerShape(4.dp),
-        ) {}
-
+            shape = RoundedCornerShape(4.dp),) {}
         Card(
             modifier = Modifier.height(141.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
-            colors = CardDefaults.cardColors(Color(0x33000000)),
-        ) {}
-
+            colors = CardDefaults.cardColors(Color(0x33000000)),) {}
         Card(
             modifier = Modifier.height(140.dp).width(78.dp),
             shape = RoundedCornerShape(4.dp),
@@ -111,6 +83,5 @@ fun CardDeck() {
                 contentScale = ContentScale.Crop
             )
         }
-
     }
 }

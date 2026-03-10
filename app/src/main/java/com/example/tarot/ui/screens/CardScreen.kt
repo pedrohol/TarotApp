@@ -43,36 +43,30 @@ fun CardScreen(navHostController: NavHostController = rememberNavController()) {
     val cardList = uiState.value.cardsList
 
     Scaffold() {innerPadding ->
-
-        Box(modifier = Modifier.fillMaxSize())
-        {
-
+        Box(modifier = Modifier.fillMaxSize()) {
             MainScreen()
-
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
+                modifier =
+                    Modifier
                     .padding(innerPadding)
                     .fillMaxSize()
                     .verticalScroll(rememberScrollState())
                     .background(Color(0xCC000000))) {
-
                 Image(
                     painter = painterResource(id = R.drawable.close_icon),
                     contentDescription = "Close icon",
                     alignment = Alignment.CenterStart,
-                    modifier = Modifier
+                    modifier =
+                        Modifier
                         .fillMaxWidth()
                         .size(50.dp)
                         .padding(10.dp)
                         .clickable(
                             interactionSource = remember { MutableInteractionSource() },
                             indication = null
-                        ){ navHostController.popBackStack() },
-                )
-
+                        ){ navHostController.popBackStack() })
                 Spacer(modifier = Modifier.height(10.dp))
-
                 cardList.forEach {
                     Box(modifier = Modifier.fillMaxHeight()) {
                         ShowCardList(card = it)
@@ -81,5 +75,4 @@ fun CardScreen(navHostController: NavHostController = rememberNavController()) {
             }
         }
     }
-    
 }

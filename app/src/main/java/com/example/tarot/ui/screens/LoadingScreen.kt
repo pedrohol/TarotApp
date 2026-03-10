@@ -10,14 +10,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.tarot.ui.components.LoadingCards
 
-@Preview
 @Composable
 fun LoadingScreen(modifier: Modifier) {
     Box(
         contentAlignment = Alignment.Center,
-        modifier = modifier
-            .fillMaxSize()
-            .background(Color(0xCC000000))) {
+        modifier = modifier.fillMaxSize().background(Color(0xCC000000))) {
         LoadingCards()
     }
 }

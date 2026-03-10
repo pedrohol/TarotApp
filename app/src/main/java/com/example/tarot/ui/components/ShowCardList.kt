@@ -54,13 +54,10 @@ fun ShowCardList(card: Card = Card("3 de Espadas","O 3 de Espadas geralmente sig
 
     var rotated by remember { mutableStateOf(true) }
     var showCard by remember { mutableStateOf(false)}
-    val infiniteTransition = rememberInfiniteTransition(label = "iconTransition")
-
     val rotation by animateFloatAsState(
         targetValue = if (rotated) 180f else 0f,
         animationSpec = tween(durationMillis = 600, easing = FastOutSlowInEasing),
         label = "cardFlip")
-
     val animatedAlpha by animateFloatAsState(
         targetValue = if (showCard) 1.0f else 0f,
         label = "alpha"
@@ -68,56 +65,46 @@ fun ShowCardList(card: Card = Card("3 de Espadas","O 3 de Espadas geralmente sig
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxSize()
-    ) {
-
+        modifier = Modifier.fillMaxSize()) {
         Card(
             colors = CardDefaults.cardColors(Color.White),
             elevation = CardDefaults.cardElevation(6.dp),
-            modifier = Modifier
+            modifier =
+                Modifier
                 .height(460.dp)
                 .width(264.dp)
-
                 .clickable{
                     rotated = !rotated
                     showCard = !showCard }
                 .graphicsLayer{
                     rotationY = rotation
-                    cameraDistance = 12f * density
-                }) {
-
+                    cameraDistance = 12f * density }) {
             if (rotation > 90f) {
                 AsyncImage(
                     model = R.drawable.card_back,
                     contentDescription = "Card Back",
                     contentScale = ContentScale.Crop
                 )
-
             } else if (rotation <= 90f) {
-                Box(contentAlignment = Alignment.Center,
-                    modifier = Modifier.fillMaxSize())
-                {
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier.fillMaxSize()) {
                     AsyncImage(
                         model = card.image,
                         contentDescription = "Card Front",
                         contentScale = ContentScale.Crop,
-                        modifier = Modifier
-                            .size(height = 450.dp, width = 256.dp)
-
+                        modifier = Modifier.size(height = 450.dp, width = 256.dp)
                     )
                 }
             }
         }
-
         Spacer(modifier = Modifier.height(20.dp))
-
-        Column(modifier = Modifier
+        Column(modifier =
+            Modifier
             .animateContentSize()
             .height( if(showCard) 260.dp else 0.dp )
             .graphicsLayer{
-                alpha = animatedAlpha
-            }) {
-
+                alpha = animatedAlpha }) {
             Text(
                 text = card.name,
                 fontSize = 22.sp,
@@ -125,7 +112,6 @@ fun ShowCardList(card: Card = Card("3 de Espadas","O 3 de Espadas geralmente sig
                 textAlign = TextAlign.Center,
                 fontFamily = tarotFontFamily,
                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp, start = 8.dp, end = 8.dp))
-
             Text(
                 text = card.description,
                 fontSize = 19.sp,
@@ -134,7 +120,6 @@ fun ShowCardList(card: Card = Card("3 de Espadas","O 3 de Espadas geralmente sig
                 fontFamily = tarotFontFamily,
                 style = TextStyle(lineBreak = LineBreak.Paragraph),
                 modifier = Modifier.fillMaxWidth().padding(8.dp))
-
             Spacer(modifier = Modifier.height(10.dp))
         }
     }

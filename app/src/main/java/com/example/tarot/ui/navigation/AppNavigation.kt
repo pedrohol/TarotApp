@@ -11,18 +11,10 @@ import com.example.tarot.ui.screens.ShowCardsScreen
 @Composable
 fun AppNavigation() {
     val navHostController = rememberNavController()
-
     NavHost(navController = navHostController, startDestination = "mainScreen") {
-
-        composable("mainScreen") {
-            MainScreen(navHostController = navHostController)
-        }
-        composable("cardScreen") {
-            CardScreen(navHostController = navHostController)
-        }
-        composable("showCardsScreen") {
-            ShowCardsScreen(navHostController = navHostController)
-        }
+        composable("mainScreen") { MainScreen(navHostController = navHostController) }
+        composable("cardScreen") { CardScreen(navHostController = navHostController) }
+        composable("showCardsScreen") { ShowCardsScreen(navHostController = navHostController) }
     }
 
 }

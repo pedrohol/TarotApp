@@ -49,7 +49,6 @@ import org.koin.androidx.compose.koinViewModel
 fun MainScreen(navHostController: NavHostController = rememberNavController()) {
 
     val scope = rememberCoroutineScope()
-
     val infiniteTransition = rememberInfiniteTransition(label = "tapTransition")
     val tapLoop by infiniteTransition.animateFloat(
         initialValue = 0f,
@@ -60,7 +59,6 @@ fun MainScreen(navHostController: NavHostController = rememberNavController()) {
         ),
         label = "tapAnimation"
     )
-
     var showLoading by remember { mutableStateOf(false) }
     val animatedAlpha by animateFloatAsState(
         targetValue = if (showLoading) 1f else 0f,
@@ -68,14 +66,16 @@ fun MainScreen(navHostController: NavHostController = rememberNavController()) {
         )
 
     Scaffold() { innerPadding ->
-        Box(modifier = Modifier
+        Box(modifier =
+            Modifier
             .fillMaxSize()
             .padding(innerPadding)
             .background(Color(0xFF52969F))) {
 
             Box(
                 contentAlignment = Alignment.Center,
-                modifier = Modifier
+                modifier =
+                    Modifier
                     .fillMaxSize()
                     .clickable{
                         showLoading = true
@@ -88,13 +88,12 @@ fun MainScreen(navHostController: NavHostController = rememberNavController()) {
                     }) {
                 CardDeck()
             }
-
             Box(
                 contentAlignment = Alignment.BottomCenter,
-                modifier = Modifier
+                modifier =
+                    Modifier
                     .fillMaxSize()
                     .padding(bottom = 220.dp)) {
-
                 Image(
                     painterResource(id = R.drawable.tap_icon),
                     contentDescription = "Tap icon",
@@ -102,19 +101,18 @@ fun MainScreen(navHostController: NavHostController = rememberNavController()) {
                         .size(60.dp)
                         .graphicsLayer{ translationY = tapLoop }
                 )
-
             }
-
             Box(contentAlignment = Alignment.TopEnd,
-                modifier = Modifier
+                modifier =
+                    Modifier
                     .fillMaxSize()
                     .padding(10.dp)
             ){
-
                 Image(
                     painterResource(id = R.drawable.cards_icon),
                     contentDescription = "Cards icon",
-                    modifier = Modifier
+                    modifier =
+                        Modifier
                         .size(45.dp)
                         .clickable(
                             interactionSource = remember { MutableInteractionSource() },
@@ -123,11 +121,7 @@ fun MainScreen(navHostController: NavHostController = rememberNavController()) {
                         }
                 )
             }
-
-            if(showLoading) {
-                LoadingScreen(modifier = Modifier.graphicsLayer{ alpha = animatedAlpha })
-            }
-
+            if(showLoading) { LoadingScreen(modifier = Modifier.graphicsLayer{ alpha = animatedAlpha }) }
         }
     }
 }

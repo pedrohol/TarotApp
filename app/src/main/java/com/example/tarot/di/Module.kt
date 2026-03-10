@@ -9,10 +9,7 @@ import org.koin.dsl.module
 import org.koin.plugin.module.dsl.viewModel
 
 val viewModelModule = module {
-
     factory<CardRepository> { TarotCards() }
     viewModelOf(::CardViewModel)
-
 }
-
 val modules = listOf(viewModelModule)

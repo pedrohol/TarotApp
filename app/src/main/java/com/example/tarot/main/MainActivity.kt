@@ -19,15 +19,11 @@ import com.example.tarot.ui.theme.TarotTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-
         installSplashScreen()
-
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            TarotTheme {
-                AppNavigation()
-            }
+            TarotTheme { AppNavigation() }
         }
     }
 }

@@ -38,66 +38,56 @@ fun LoadingCards() {
                 durationMillis = 1000,
                 delayMillis = 0,
                 easing = FastOutSlowInEasing),
-            repeatMode = RepeatMode.Reverse
-        ),
+            repeatMode = RepeatMode.Reverse),
         label = "firstTransition"
     )
 
-
-    Row(verticalAlignment = Alignment.Bottom,
+    Row(
+        verticalAlignment = Alignment.Bottom,
         modifier = Modifier.padding(10.dp)){
 
         Card(
             shape = RoundedCornerShape(2.dp),
             colors = CardDefaults.cardColors(Color.White),
-            modifier = Modifier
-            .height(88.dp)
-            .width(50.dp)
-            .graphicsLayer{
-                rotationZ = -8f
-                translationY = movementCard
-            }
-        ) {
+            modifier =
+                Modifier
+                .height(88.dp)
+                .width(50.dp)
+                .graphicsLayer{
+                    rotationZ = -8f
+                    translationY = movementCard }) {
             AsyncImage(
                 model = R.drawable.card_back,
                 contentDescription = "Card Back Loading"
             )
         }
-
-
         Card(
             shape = RoundedCornerShape(2.dp),
             colors = CardDefaults.cardColors(Color.White),
-            modifier = Modifier
-            .height(88.dp)
-            .width(50.dp)
-            .graphicsLayer{
-                translationY = movementCard
-            }
-        ) {
+            modifier =
+                Modifier
+                    .height(88.dp)
+                    .width(50.dp)
+                    .graphicsLayer{ translationY = movementCard }) {
             AsyncImage(
                 model = R.drawable.card_back,
                 contentDescription = "Card Back Loading"
             )
         }
-
         Card(
             shape = RoundedCornerShape(2.dp),
             colors = CardDefaults.cardColors(Color.White),
-            modifier = Modifier
-            .height(88.dp)
-            .width(50.dp)
-            .graphicsLayer{
-                rotationZ = 8f
-                translationY = movementCard
-            }
-        ) {
+            modifier =
+                Modifier
+                    .height(88.dp)
+                    .width(50.dp)
+                    .graphicsLayer{
+                        rotationZ = 8f
+                        translationY = movementCard }) {
             AsyncImage(
                 model = R.drawable.card_back,
                 contentDescription = "Card Back Loading"
             )
         }
-
     }
-
 }

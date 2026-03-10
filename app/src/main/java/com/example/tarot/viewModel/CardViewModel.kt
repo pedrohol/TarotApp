@@ -31,8 +31,7 @@ class CardViewModel(val repository: CardRepository): ViewModel() {
             for (i in 1..5) {
                 val card = cards.random()
                 newList.add(card)
-                cards.remove(card)
-            }
+                cards.remove(card) }
             _uiState.update { it.copy(cardsList = newList, isLoading = false) }
         }
     }

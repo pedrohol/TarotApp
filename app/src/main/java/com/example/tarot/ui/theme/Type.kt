@@ -37,5 +37,4 @@ val Typography = Typography(
 
 val tarotFontFamily = FontFamily(
     Font(R.font.tarotheque, FontWeight.Normal),
-    Font(R.font.tarotheque_v1, FontWeight.Normal),
-)
+    Font(R.font.tarotheque_v1, FontWeight.Normal))

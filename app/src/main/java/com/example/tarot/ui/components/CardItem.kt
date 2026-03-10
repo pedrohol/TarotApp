@@ -23,8 +23,7 @@ fun CardItem(cardImage: Int, onClick: () -> Unit = {}) {
     Card(
         colors = CardDefaults.cardColors(Color.White),
         modifier = Modifier.height(140.dp).width(76.dp).clickable{ onClick() },
-        shape = RoundedCornerShape(4.dp)
-    ) {
+        shape = RoundedCornerShape(4.dp)) {
         AsyncImage(
             model = cardImage,
             contentDescription = "Card Front",
